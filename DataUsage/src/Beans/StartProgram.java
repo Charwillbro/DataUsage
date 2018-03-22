@@ -9,7 +9,7 @@ public class StartProgram {
 		Scanner in = new Scanner(System.in);
 		String addData = "N";
 		String sentValue = "Y";
-		long userId;
+		int userId;
 		double amount;
 
 		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
@@ -51,7 +51,7 @@ public class StartProgram {
 						+ cellPhoneUserService.getCellPhoneUser(2).getCellUserName());
 				System.out.println("**************");
 				System.out.println("Please enter only the account ID");
-				userId = in.nextLong();
+				userId = in.nextInt();
 				System.out.println("How many MB of data would you like to add?");
 				amount = in.nextDouble();
 

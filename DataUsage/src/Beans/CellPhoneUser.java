@@ -2,7 +2,7 @@ package Beans;
 
 public class CellPhoneUser {
 
-	long cellUserId;
+	double cellUserId;
 	double data;
 	double usedData;
 	String cellUserName;
@@ -11,18 +11,18 @@ public class CellPhoneUser {
 
 	}
 
-	public CellPhoneUser(long cellUserId, String cellUserName, double data, double usedData) {
+	public CellPhoneUser(double cellUserId, String cellUserName, double data, double usedData) {
 		this.cellUserId = cellUserId;
 		this.cellUserName = cellUserName;
 		this.data = data;
 		this.usedData = usedData;
 	}
 
-	public long getCellUserId() {
+	public double getCellUserId() {
 		return cellUserId;
 	}
 
-	public void setCellUserId(long cellUserId) {
+	public void setCellUserId(double cellUserId) {
 		this.cellUserId = cellUserId;
 	}
 

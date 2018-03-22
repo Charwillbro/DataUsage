@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class CellPhoneUserImpl implements CellPhoneUserDao {
 	Scanner in = new Scanner(System.in);
-	private Map<Long, CellPhoneUser> cellPhoneUserMap = new HashMap<Long, CellPhoneUser>();
+	private Map<Double, CellPhoneUser> cellPhoneUserMap = new HashMap<Double, CellPhoneUser>();
 	{
 		double usedData1 = 0;
 		System.out.println("How many megabytes of data have you used Charles?");
@@ -39,17 +39,17 @@ public class CellPhoneUserImpl implements CellPhoneUserDao {
 		}
 	}
 
-	public void delete(long CellUserId) {
+	public void delete(double CellUserId) {
 		cellPhoneUserMap.remove(CellUserId);
 	}
 
-	public CellPhoneUser find(long CellUserId) {
+	public CellPhoneUser find(double CellUserId) {
 		return cellPhoneUserMap.get(CellUserId);
 	}
 
-	public List<CellPhoneUser> find(List<Long> CellUserIds) {
+	public List<CellPhoneUser> find(List<Double> CellUserIds) {
 		List<CellPhoneUser> cellPhoneUsers = new ArrayList<CellPhoneUser>();
-		for (Long id : CellUserIds) {
+		for (Double id : CellUserIds) {
 			cellPhoneUsers.add(cellPhoneUserMap.get(id));
 		}
 		return cellPhoneUsers;

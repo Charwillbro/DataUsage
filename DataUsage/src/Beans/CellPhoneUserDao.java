@@ -9,11 +9,11 @@ public interface CellPhoneUserDao {
 
 	public void update(List<CellPhoneUser> cellPhoneUsers);
 
-	public void delete(long cellUserId);
+	public void delete(double cellUserId);
 
-	public CellPhoneUser find(long cellUserId);
+	public CellPhoneUser find(double cellUserId);
 
-	public List<CellPhoneUser> find(List<Long> cellUserIds);
+	public List<CellPhoneUser> find(List<Double> cellUserIds);
 
 	public List<CellPhoneUser> find(String cellUserName);
 }
