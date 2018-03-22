@@ -28,6 +28,7 @@ public class StartProgram {
 		//persisting to a db
 		CellPhoneUser toAdd = new CellPhoneUser( "Jim", 500,25);
 		cuh.insertItem(toAdd);
+		
 
 		System.out.println("Amount of data in each users Account:");
 		System.out.println("-------------------------------------------------------------------------------|");
