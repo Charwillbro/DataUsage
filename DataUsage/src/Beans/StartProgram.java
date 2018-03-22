@@ -12,8 +12,7 @@ public class StartProgram {
 		int userId;
 		double amount;
 
-		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(
-				BeanConfiguration.class);
+		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfiguration.class);
 
 		CellPhoneUserService cellPhoneUserService = applicationContext.getBean("cellPhoneUserService",
 				CellPhoneUserService.class);
@@ -41,7 +40,7 @@ public class StartProgram {
 		if (addData.equals("Y")) {
 
 			while (sentValue.equals("Y")) {
-
+				
 				System.out.println("Which account would you like to add data to?");
 				// list users
 				System.out.println("**************");
