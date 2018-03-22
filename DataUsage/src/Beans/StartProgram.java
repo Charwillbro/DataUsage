@@ -3,19 +3,31 @@ import java.util.Scanner;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import Beans.CellPhoneUser;
+
 public class StartProgram {
 
 	public static void main(String[] args) {
+		CellPhoneUserHelper cuh = new CellPhoneUserHelper();
+		
 		Scanner in = new Scanner(System.in);
 		String addData = "N";
 		String sentValue = "Y";
 		int userId;
 		double amount;
+		
+		
+		
 
 		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfiguration.class);
 
 		CellPhoneUserService cellPhoneUserService = applicationContext.getBean("cellPhoneUserService",
 				CellPhoneUserService.class);
+		
+		//proof of concept
+		//persisting to a db
+		CellPhoneUser toAdd = new CellPhoneUser( "Jim", 500,25);
+		cuh.insertItem(toAdd);
 
 		System.out.println("Amount of data in each users Account:");
 		System.out.println("-------------------------------------------------------------------------------|");

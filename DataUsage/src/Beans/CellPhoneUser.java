@@ -1,10 +1,24 @@
 package Beans;
 
-public class CellPhoneUser {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="cellphoneuser")
+public class CellPhoneUser {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="cellUserId")
 	double cellUserId;
+    @Column(name="data")
 	double data;
+    @Column(name="usedData")
 	double usedData;
+    @Column(name="cellUserName")
 	String cellUserName;
 
 	public CellPhoneUser() {
@@ -17,7 +31,12 @@ public class CellPhoneUser {
 		this.data = data;
 		this.usedData = usedData;
 	}
-
+	public CellPhoneUser( String cellUserName, double data, double usedData) {
+		
+		this.cellUserName = cellUserName;
+		this.data = data;
+		this.usedData = usedData;
+	}
 	public double getCellUserId() {
 		return cellUserId;
 	}
