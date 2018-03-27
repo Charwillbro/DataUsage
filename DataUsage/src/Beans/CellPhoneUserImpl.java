@@ -1,4 +1,5 @@
 package Beans;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,18 +8,18 @@ import java.util.Scanner;
 
 public class CellPhoneUserImpl implements CellPhoneUserDao {
 	Scanner in = new Scanner(System.in);
-	private Map<Double, CellPhoneUser> cellPhoneUserMap = new HashMap<Double, CellPhoneUser>();
+	private Map<Integer, CellPhoneUser> cellPhoneUserMap = new HashMap<Integer, CellPhoneUser>();
 	{
 		double usedData1 = 0;
-		System.out.println("How many megabytes of data have you used Charles?");
-		usedData1 = in.nextDouble();
+		// System.out.println("How many megabytes of data have you used Charles?");
+		// usedData1 = in.nextDouble();
 
 		// String cellUserId, String cellUserName, double data, double usedData
 		CellPhoneUser cellPhoneUser1 = new CellPhoneUser(1, "Charles", 2048, usedData1);
 
 		double usedData2 = 0;
-		System.out.println("How many megabytes of data have you used Edward?");
-		usedData2 = in.nextDouble();
+		// System.out.println("How many megabytes of data have you used Edward?");
+		// usedData2 = in.nextDouble();
 
 		CellPhoneUser cellPhoneUser2 = new CellPhoneUser(2, "Edward", 2048, usedData2);
 		cellPhoneUserMap.put(cellPhoneUser1.getCellUserId(), cellPhoneUser1);
@@ -39,17 +40,17 @@ public class CellPhoneUserImpl implements CellPhoneUserDao {
 		}
 	}
 
-	public void delete(double CellUserId) {
+	public void delete(int CellUserId) {
 		cellPhoneUserMap.remove(CellUserId);
 	}
 
-	public CellPhoneUser find(double CellUserId) {
+	public CellPhoneUser find(int CellUserId) {
 		return cellPhoneUserMap.get(CellUserId);
 	}
 
-	public List<CellPhoneUser> find(List<Double> CellUserIds) {
+	public List<CellPhoneUser> find(List<Integer> CellUserIds) {
 		List<CellPhoneUser> cellPhoneUsers = new ArrayList<CellPhoneUser>();
-		for (Double id : CellUserIds) {
+		for (int id : CellUserIds) {
 			cellPhoneUsers.add(cellPhoneUserMap.get(id));
 		}
 		return cellPhoneUsers;

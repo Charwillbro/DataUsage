@@ -8,40 +8,53 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="cellphoneuser")
+@Table(name = "cellphoneuser")
 public class CellPhoneUser {
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="cellUserId")
-	double cellUserId;
-    @Column(name="data")
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "cellUserId")
+	int cellUserId;
+	@Column(name = "data")
 	double data;
-    @Column(name="usedData")
+	@Column(name = "usedData")
 	double usedData;
-    @Column(name="cellUserName")
+	@Column(name = "cellUserName")
 	String cellUserName;
 
 	public CellPhoneUser() {
 
 	}
 
-	public CellPhoneUser(double cellUserId, String cellUserName, double data, double usedData) {
+	public CellPhoneUser(int cellUserId, String cellUserName, double data, double usedData) {
 		this.cellUserId = cellUserId;
 		this.cellUserName = cellUserName;
 		this.data = data;
 		this.usedData = usedData;
 	}
-	public CellPhoneUser( String cellUserName, double data, double usedData) {
-		
+
+	public CellPhoneUser(String cellUserName, double data, double usedData) {
+
 		this.cellUserName = cellUserName;
 		this.data = data;
 		this.usedData = usedData;
 	}
-	public double getCellUserId() {
+
+	public CellPhoneUser(int cellUserId) {
+		super();
+		this.cellUserId = cellUserId;
+	}
+
+	public int getCellUserId() {
 		return cellUserId;
 	}
 
-	public void setCellUserId(double cellUserId) {
+	public CellPhoneUser(double data, String cellUserName) {
+		super();
+		this.data = data;
+		this.cellUserName = cellUserName;
+	}
+
+	public void setCellUserId(int cellUserId) {
 		this.cellUserId = cellUserId;
 	}
 

@@ -1,4 +1,5 @@
 package Beans;
+
 import java.util.List;
 
 public interface CellPhoneUserDao {
@@ -9,11 +10,11 @@ public interface CellPhoneUserDao {
 
 	public void update(List<CellPhoneUser> cellPhoneUsers);
 
-	public void delete(double cellUserId);
+	public void delete(int cellUserId);
 
-	public CellPhoneUser find(double cellUserId);
+	public CellPhoneUser find(int cellUserId);
 
-	public List<CellPhoneUser> find(List<Double> cellUserIds);
+	public List<CellPhoneUser> find(List<Integer> cellUserIds);
 
 	public List<CellPhoneUser> find(String cellUserName);
 }

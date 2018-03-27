@@ -12,21 +12,21 @@ public class CellPhoneUserServiceImpl implements CellPhoneUserService {
 		this.cellPhoneUserDao = cellPhoneUserDao;
 	}
 
-	public void userDataUsage(double cellUserId) {
+	public void userDataUsage(int cellUserId) {
 		CellPhoneUser cellPhoneUser = cellPhoneUserDao.find(cellUserId);
 		cellPhoneUser.setData(cellPhoneUser.getData() - cellPhoneUser.getUsedData());
 		cellPhoneUserDao.update(cellPhoneUser);
 
 	}
 
-	public void addData(double cellUserId, double amount) {
+	public void addData(int cellUserId, double amount) {
 		CellPhoneUser cellPhoneUser = cellPhoneUserDao.find(cellUserId);
 		cellPhoneUser.setData(cellPhoneUser.getData() + amount);
 		cellPhoneUserDao.update(cellPhoneUser);
 
 	}
 
-	public CellPhoneUser getCellPhoneUser(double cellUserId) {
+	public CellPhoneUser getCellPhoneUser(int cellUserId) {
 		return cellPhoneUserDao.find(cellUserId);
 	}
 

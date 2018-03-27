@@ -2,10 +2,10 @@ package Beans;
 
 public interface CellPhoneUserService {
 
-	public void addData(double cellUserId, double amount);
+	public void addData(int cellUserId, double amount);
 
-	public CellPhoneUser getCellPhoneUser(double cellUserId);
+	public CellPhoneUser getCellPhoneUser(int cellUserId);
 
-	public void userDataUsage(double cellUserId);
+	public void userDataUsage(int cellUserId);
 
 }
